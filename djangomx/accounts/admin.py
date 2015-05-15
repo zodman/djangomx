@@ -25,7 +25,7 @@ class ProfileAdmin(admin.ModelAdmin):
         created_at_week = int(created_at.strftime("%U"))
         total_post = now_week - created_at_week
         posts = obj.user.post_set.count()
-        return "%s/%s" % (total_post, posts)
+        return "%s/%s" % (posts, total_post)
 
 
     def has_obj_change_permission(self, obj, request):
